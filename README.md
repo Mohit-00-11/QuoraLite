@@ -14,7 +14,7 @@ Follow these steps to set up and run the project on your local machine.
 
 ```bash
 
-git clone https://github.com/Mohit-00-11/QuoraXerox.git
+git clone https://github.com/Mohit-00-11/QuoraLite.git
 
 ```
 ### 2. Create a Virtual Environment
@@ -41,15 +41,23 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 ```
+### 5. Set environment variables in .env file (.envExample for reference)
 
-### 5. Apply Migrations
+```bash
+
+SECRET_KEY=""
+ALLOWED_HOSTS=[""]
+DEBUG=
+
+```
+### 6. Apply Migrations
 
 ```bash
 
 python manage.py migrate
 
 ```
-### 6. Run the Project
+### 7. Run the Project
 
 ```bash
 python manage.py runserver
