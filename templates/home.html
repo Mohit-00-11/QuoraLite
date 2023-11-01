@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  {% if request.resolver_match.url_name == "question" %}
+    {% include "includes/question_details_card.html"%}
+  {% else%}
+    {% include "includes/question_card.html"%}
+  {% endif %}
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url "app:login" %}">Log In</a>
+{% endif %}
+{% endblock %}

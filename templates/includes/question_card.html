@@ -1,0 +1,25 @@
+{% block content %}
+
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-conten padding-y" style="min-height:84vh">
+
+    <!-- ============================ COMPONENT QUESTION   ================================= -->
+    <div class="container">
+      {% for question in questions%}
+        <form method="get" action="{% url "app:question" question.id %}">
+          <div class="card mt-2">
+            <div class="card-header">
+                <h5>{{question.author.first_name}}</h5>
+              <div class="card-body">
+                {{question.content}}
+              </div> <!-- card-body.// -->
+            </div> <!-- card-header.// -->
+          <button type="submit" class="btn btn-primary btn-block"> View Answers  </button>
+          </div> <!-- card .// -->
+        </form>
+      {% endfor %}
+    </div>
+</section>
+    
+
+{% endblock content %}

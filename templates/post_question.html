@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-content padding-y">
+
+    <!-- ============================ COMPONENT REGISTER   ================================= -->
+        <div class="card mx-auto" style="max-width:520px; margin-top:40px;">
+            {% comment "" %}{% include "includes/alert.html" %}{% endcomment %}
+          <article class="card-body">
+            <header class="mb-4"><h4 class="card-title">Add Question</h4></header>
+            <form action="{% url "app:question" %}" method="post">
+                {% csrf_token %}
+                    <div class="form-row">
+                        <div class="col form-group mb-2">
+                            {{ form.content }}
+                        </div> <!-- form-group end.// -->
+                    </div> <!-- form-row end.// -->
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block"> Ask Question </button>
+                    </div> <!-- form-group// -->      
+                    {{ form.non_field_errors }}
+                </form>
+            </article><!-- card-body.// -->
+        </div> <!-- card .// -->
+</section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+    
+
+{% endblock %}
